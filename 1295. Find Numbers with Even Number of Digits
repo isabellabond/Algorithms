@@ -1,0 +1,18 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+        int numDigits = 0;
+        int even = 0;
+        for(int x = 0; x < nums.length; x++){
+            int cur = nums[x];
+            while(cur != 0){
+                cur = cur/10;
+                ++numDigits;
+            }
+            if(numDigits%2 == 0){
+                even++;   
+            }
+            numDigits = 0;
+        }
+        return even;
+    }
+}
